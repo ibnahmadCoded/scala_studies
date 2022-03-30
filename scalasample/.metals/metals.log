@@ -1,0 +1,556 @@
+2022.03.28 05:51:21 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at c:\Users\Aliyu Alege\Desktop\scala_samples\scalasample\.metals\lsp.trace.json or C:\Users\Aliyu Alege\AppData\Local\scalameta\metals\cache\lsp.trace.json
+2022.03.28 05:51:21 INFO  logging to file C:\Users\Aliyu Alege\Desktop\scala_samples\scalasample\.metals\metals.log
+2022.03.28 05:51:21 INFO  Started: Metals version 0.11.2 in workspace 'C:\Users\Aliyu Alege\Desktop\scala_samples\scalasample' for client Visual Studio Code 1.65.2.
+2022.03.28 05:51:21 INFO  Parse release: 1.8.0_321
+2022.03.28 05:51:22 INFO  time: initialize in 1.02s
+2022.03.28 05:51:23 WARN  Build server is not auto-connectable.
+2022.03.28 05:51:48 WARN  no build target for: C:\Users\Aliyu Alege\Desktop\scala_samples\scalasample\src\main\scala\Main.scala
+2022.03.28 05:51:48 INFO  no build target found for C:\Users\Aliyu Alege\Desktop\scala_samples\scalasample\src\main\scala\Main.scala. Using presentation compiler with project's scala-library version: 3.1.1
+2022.03.28 05:51:50 INFO  time: code lens generation in 1.95s
+2022.03.28 05:54:48 WARN  no build target for: C:\Users\Aliyu Alege\Desktop\scala_samples\scalasample\src\main\scala\HelloWorld.scala
+Mar 28, 2022 5:54:50 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleNotification
+WARNING: Notification threw an exception: {
+  "jsonrpc": "2.0",
+  "method": "textDocument/didChange",
+  "params": {
+    "textDocument": {
+      "version": 2,
+      "uri": "file:///c%3A/Users/Aliyu%20Alege/Desktop/scala_samples/scalasample/src/main/scala/HelloWorld.scala"
+    },
+    "contentChanges": [
+      {
+        "text": "object HelloWorld {\n  def main(args: Array[String]): Unit \u003d {\n    println(\"Hello, world!\")\n  }\n}\n"
+      }
+    ]
+  }
+}
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:152)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:187)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.lang.IllegalArgumentException: Illegal character in path at index 22: file:///C:/Users/Aliyu Alege/Desktop/scala_samples/scalasample/src/main/scala/HelloWorld.scala
+	at java.net.URI.create(URI.java:852)
+	at scala.meta.internal.mtags.MtagsEnrichments$XtensionStringMtags.toAbsolutePath(MtagsEnrichments.scala:103)
+	at scala.meta.internal.mtags.MtagsEnrichments$XtensionStringMtags.toAbsolutePath(MtagsEnrichments.scala:99)
+	at scala.meta.internal.parsing.Trees.tokenized(Trees.scala:112)
+	at scala.meta.internal.parsing.TokenEditDistance$.apply(TokenEditDistance.scala:383)
+	at scala.meta.internal.metals.Diagnostics.publishDiagnostics(Diagnostics.scala:195)
+	at scala.meta.internal.metals.Diagnostics.publishDiagnostics(Diagnostics.scala:164)
+	at scala.meta.internal.metals.Diagnostics.didChange(Diagnostics.scala:112)
+	at scala.meta.internal.metals.MetalsLanguageServer.didChange(MetalsLanguageServer.scala:1193)
+	... 16 more
+Caused by: java.net.URISyntaxException: Illegal character in path at index 22: file:///C:/Users/Aliyu Alege/Desktop/scala_samples/scalasample/src/main/scala/HelloWorld.scala
+	at java.net.URI$Parser.fail(URI.java:2845)
+	at java.net.URI$Parser.checkChars(URI.java:3018)
+	at java.net.URI$Parser.parseHierarchical(URI.java:3102)
+	at java.net.URI$Parser.parse(URI.java:3050)
+	at java.net.URI.<init>(URI.java:588)
+	at java.net.URI.create(URI.java:850)
+	... 24 more
+
+Mar 28, 2022 5:54:50 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.IllegalArgumentException: Illegal character in path at index 22: file:///C:/Users/Aliyu Alege/Desktop/scala_samples/scalasample/src/main/scala/HelloWorld.scala
+java.util.concurrent.CompletionException: java.lang.IllegalArgumentException: Illegal character in path at index 22: file:///C:/Users/Aliyu Alege/Desktop/scala_samples/scalasample/src/main/scala/HelloWorld.scala
+	at java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:292)
+	at java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:308)
+	at java.util.concurrent.CompletableFuture.uniAccept(CompletableFuture.java:661)
+	at java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:646)
+	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:488)
+	at java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:1990)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1(CancelTokens.scala:40)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1$adapted(CancelTokens.scala:38)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.lang.IllegalArgumentException: Illegal character in path at index 22: file:///C:/Users/Aliyu Alege/Desktop/scala_samples/scalasample/src/main/scala/HelloWorld.scala
+	at java.net.URI.create(URI.java:852)
+	at scala.meta.internal.mtags.MtagsEnrichments$XtensionStringMtags.toAbsolutePath(MtagsEnrichments.scala:103)
+	at scala.meta.internal.mtags.MtagsEnrichments$XtensionStringMtags.toAbsolutePath(MtagsEnrichments.scala:99)
+	at scala.meta.internal.parsing.Trees.tokenized(Trees.scala:112)
+	at scala.meta.internal.metals.formatting.RangeFormattingProvider.$anonfun$format$1(RangeFormattingProvider.scala:54)
+	at scala.Option.map(Option.scala:230)
+	at scala.meta.internal.metals.formatting.RangeFormattingProvider.format(RangeFormattingProvider.scala:50)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$rangeFormatting$1(MetalsLanguageServer.scala:1498)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:659)
+	at scala.util.Success.$anonfun$map$1(Try.scala:255)
+	at scala.util.Success.map(Try.scala:213)
+	at scala.concurrent.Future.$anonfun$map$1(Future.scala:292)
+	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:33)
+	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:33)
+	... 4 more
+Caused by: java.net.URISyntaxException: Illegal character in path at index 22: file:///C:/Users/Aliyu Alege/Desktop/scala_samples/scalasample/src/main/scala/HelloWorld.scala
+	at java.net.URI$Parser.fail(URI.java:2845)
+	at java.net.URI$Parser.checkChars(URI.java:3018)
+	at java.net.URI$Parser.parseHierarchical(URI.java:3102)
+	at java.net.URI$Parser.parse(URI.java:3050)
+	at java.net.URI.<init>(URI.java:588)
+	at java.net.URI.create(URI.java:850)
+	... 18 more
+
+Mar 28, 2022 5:54:50 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.IllegalArgumentException: Illegal character in path at index 22: file:///C:/Users/Aliyu Alege/Desktop/scala_samples/scalasample/src/main/scala/HelloWorld.scala
+java.util.concurrent.CompletionException: java.lang.IllegalArgumentException: Illegal character in path at index 22: file:///C:/Users/Aliyu Alege/Desktop/scala_samples/scalasample/src/main/scala/HelloWorld.scala
+	at java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:292)
+	at java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:308)
+	at java.util.concurrent.CompletableFuture.uniAccept(CompletableFuture.java:661)
+	at java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:646)
+	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:488)
+	at java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:1990)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1(CancelTokens.scala:40)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1$adapted(CancelTokens.scala:38)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.lang.IllegalArgumentException: Illegal character in path at index 22: file:///C:/Users/Aliyu Alege/Desktop/scala_samples/scalasample/src/main/scala/HelloWorld.scala
+	at java.net.URI.create(URI.java:852)
+	at scala.meta.internal.mtags.MtagsEnrichments$XtensionStringMtags.toAbsolutePath(MtagsEnrichments.scala:103)
+	at scala.meta.internal.mtags.MtagsEnrichments$XtensionStringMtags.toAbsolutePath(MtagsEnrichments.scala:99)
+	at scala.meta.internal.parsing.Trees.tokenized(Trees.scala:112)
+	at scala.meta.internal.parsing.TokenEditDistance$.apply(TokenEditDistance.scala:383)
+	at scala.meta.internal.parsing.FoldingRangeProvider.$anonfun$getRangedForScala$3(FoldingRangeProvider.scala:38)
+	at scala.Option.map(Option.scala:230)
+	at scala.meta.internal.parsing.FoldingRangeProvider.$anonfun$getRangedForScala$2(FoldingRangeProvider.scala:33)
+	at scala.Option$WithFilter.flatMap(Option.scala:271)
+	at scala.meta.internal.parsing.FoldingRangeProvider.getRangedForScala(FoldingRangeProvider.scala:31)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$foldingRange$2(MetalsLanguageServer.scala:1640)
+	at scala.util.Success.$anonfun$map$1(Try.scala:255)
+	at scala.util.Success.map(Try.scala:213)
+	at scala.concurrent.Future.$anonfun$map$1(Future.scala:292)
+	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:33)
+	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:33)
+	... 4 more
+Caused by: java.net.URISyntaxException: Illegal character in path at index 22: file:///C:/Users/Aliyu Alege/Desktop/scala_samples/scalasample/src/main/scala/HelloWorld.scala
+	at java.net.URI$Parser.fail(URI.java:2845)
+	at java.net.URI$Parser.checkChars(URI.java:3018)
+	at java.net.URI$Parser.parseHierarchical(URI.java:3102)
+	at java.net.URI$Parser.parse(URI.java:3050)
+	at java.net.URI.<init>(URI.java:588)
+	at java.net.URI.create(URI.java:850)
+	... 19 more
+
+Mar 28, 2022 5:54:50 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.IllegalArgumentException: Illegal character in path at index 22: file:///C:/Users/Aliyu Alege/Desktop/scala_samples/scalasample/src/main/scala/HelloWorld.scala
+java.util.concurrent.CompletionException: java.lang.IllegalArgumentException: Illegal character in path at index 22: file:///C:/Users/Aliyu Alege/Desktop/scala_samples/scalasample/src/main/scala/HelloWorld.scala
+	at java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:292)
+	at java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:308)
+	at java.util.concurrent.CompletableFuture.uniAccept(CompletableFuture.java:661)
+	at java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:646)
+	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:488)
+	at java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:1990)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1(CancelTokens.scala:40)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1$adapted(CancelTokens.scala:38)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.lang.IllegalArgumentException: Illegal character in path at index 22: file:///C:/Users/Aliyu Alege/Desktop/scala_samples/scalasample/src/main/scala/HelloWorld.scala
+	at java.net.URI.create(URI.java:852)
+	at scala.meta.internal.mtags.MtagsEnrichments$XtensionStringMtags.toAbsolutePath(MtagsEnrichments.scala:103)
+	at scala.meta.internal.mtags.MtagsEnrichments$XtensionStringMtags.toAbsolutePath(MtagsEnrichments.scala:99)
+	at scala.meta.internal.parsing.Trees.tokenized(Trees.scala:112)
+	at scala.meta.internal.parsing.TokenEditDistance$.apply(TokenEditDistance.scala:383)
+	at scala.meta.internal.metals.Buffers.tokenEditDistance(Buffers.scala:30)
+	at scala.meta.internal.metals.codelenses.RunTestCodeLens.codeLenses(RunTestCodeLens.scala:63)
+	at scala.meta.internal.metals.CodeLensProvider.$anonfun$findLenses$3(CodeLensProvider.scala:26)
+	at scala.collection.immutable.List.flatMap(List.scala:366)
+	at scala.meta.internal.metals.CodeLensProvider.$anonfun$findLenses$2(CodeLensProvider.scala:26)
+	at scala.Option.map(Option.scala:230)
+	at scala.meta.internal.metals.CodeLensProvider.findLenses(CodeLensProvider.scala:24)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$2(MetalsLanguageServer.scala:1628)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$1(MetalsLanguageServer.scala:1626)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:659)
+	at scala.util.Success.$anonfun$map$1(Try.scala:255)
+	at scala.util.Success.map(Try.scala:213)
+	at scala.concurrent.Future.$anonfun$map$1(Future.scala:292)
+	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:33)
+	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:33)
+	... 4 more
+Caused by: java.net.URISyntaxException: Illegal character in path at index 22: file:///C:/Users/Aliyu Alege/Desktop/scala_samples/scalasample/src/main/scala/HelloWorld.scala
+	at java.net.URI$Parser.fail(URI.java:2845)
+	at java.net.URI$Parser.checkChars(URI.java:3018)
+	at java.net.URI$Parser.parseHierarchical(URI.java:3102)
+	at java.net.URI$Parser.parse(URI.java:3050)
+	at java.net.URI.<init>(URI.java:588)
+	at java.net.URI.create(URI.java:850)
+	... 25 more
+
+2022.03.28 05:55:21 WARN  no build target for: C:\Users\Aliyu Alege\Desktop\scala_samples\scalasample\src\main\scala\HelloWorld.scala
+2022.03.28 05:57:39 WARN  no build target for: C:\Users\Aliyu Alege\Desktop\scala_samples\scalasample\src\main\scala\HelloWorld.scala
+Mar 28, 2022 5:57:39 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.reflect.InvocationTargetException
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.lang.IllegalArgumentException: Illegal character in path at index 22: file:///c:/Users/Aliyu Alege/Desktop/scala_samples/scalasample/src/main/scala/HelloWorld.scala
+	at java.net.URI.create(URI.java:852)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionString.toAbsolutePath(MetalsEnrichments.scala:630)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionString.toAbsolutePath(MetalsEnrichments.scala:621)
+	at scala.meta.internal.metals.debug.DebugProvider.debugDiscovery(DebugProvider.scala:359)
+	at scala.meta.internal.metals.MetalsLanguageServer.executeCommand(MetalsLanguageServer.scala:1828)
+	... 16 more
+Caused by: java.net.URISyntaxException: Illegal character in path at index 22: file:///c:/Users/Aliyu Alege/Desktop/scala_samples/scalasample/src/main/scala/HelloWorld.scala
+	at java.net.URI$Parser.fail(URI.java:2845)
+	at java.net.URI$Parser.checkChars(URI.java:3018)
+	at java.net.URI$Parser.parseHierarchical(URI.java:3102)
+	at java.net.URI$Parser.parse(URI.java:3050)
+	at java.net.URI.<init>(URI.java:588)
+	at java.net.URI.create(URI.java:850)
+	... 20 more
+
+2022.03.28 05:57:47 WARN  no build target for: C:\Users\Aliyu Alege\Desktop\scala_samples\scalasample\src\main\scala\HelloWorld.scala
+Mar 28, 2022 5:57:47 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.reflect.InvocationTargetException
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.lang.IllegalArgumentException: Illegal character in path at index 22: file:///c:/Users/Aliyu Alege/Desktop/scala_samples/scalasample/src/main/scala/HelloWorld.scala
+	at java.net.URI.create(URI.java:852)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionString.toAbsolutePath(MetalsEnrichments.scala:630)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionString.toAbsolutePath(MetalsEnrichments.scala:621)
+	at scala.meta.internal.metals.debug.DebugProvider.debugDiscovery(DebugProvider.scala:359)
+	at scala.meta.internal.metals.MetalsLanguageServer.executeCommand(MetalsLanguageServer.scala:1828)
+	... 16 more
+Caused by: java.net.URISyntaxException: Illegal character in path at index 22: file:///c:/Users/Aliyu Alege/Desktop/scala_samples/scalasample/src/main/scala/HelloWorld.scala
+	at java.net.URI$Parser.fail(URI.java:2845)
+	at java.net.URI$Parser.checkChars(URI.java:3018)
+	at java.net.URI$Parser.parseHierarchical(URI.java:3102)
+	at java.net.URI$Parser.parse(URI.java:3050)
+	at java.net.URI.<init>(URI.java:588)
+	at java.net.URI.create(URI.java:850)
+	... 20 more
+
+2022.03.28 05:59:10 INFO  running 'C:\Program Files\Java\jdk1.8.0_321\bin\java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar C:\Users\ALIYUA~1\AppData\Local\Temp\metals2459856810887676552\sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall'
+2022.03.28 05:59:12 INFO  [info] welcome to sbt 1.6.2 (Oracle Corporation Java 1.8.0_321)
+2022.03.28 05:59:12 INFO  running 'C:\Program Files\Java\jdk1.8.0_321\bin\java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar C:\Users\ALIYUA~1\AppData\Local\Temp\metals4374221519523200661\sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall'
+2022.03.28 05:59:14 INFO  time: ran 'sbt bloopInstall' in 2.19s
+2022.03.28 05:59:14 ERROR sbt command failed: C:\Program Files\Java\jdk1.8.0_321\bin\java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar C:\Users\ALIYUA~1\AppData\Local\Temp\metals4374221519523200661\sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall
+2022.03.28 05:59:16 INFO  [info] loading settings for project scalasample-build-build from metals.sbt ...
+2022.03.28 05:59:16 INFO  [info] loading project definition from C:\Users\Aliyu Alege\Desktop\scala_samples\scalasample\project\project
+2022.03.28 05:59:20 INFO  [info] loading settings for project scalasample-build from metals.sbt ...
+2022.03.28 05:59:20 INFO  [info] loading project definition from C:\Users\Aliyu Alege\Desktop\scala_samples\scalasample\project
+2022.03.28 05:59:23 INFO  [success] Generated .bloop\scalasample-build.json
+2022.03.28 05:59:23 INFO  [success] Total time: 3 s, completed Mar 28, 2022 5:59:23 AM
+2022.03.28 05:59:24 INFO  [info] loading settings for project root from build.sbt ...
+2022.03.28 05:59:24 INFO  [info] set current project to scalasample (in build file:/C:/Users/Aliyu%20Alege/Desktop/scala_samples/scalasample/)
+2022.03.28 05:59:24 INFO  [success] Generated .bloop\root.json
+2022.03.28 05:59:24 INFO  [success] Generated .bloop\root-test.json
+2022.03.28 05:59:24 INFO  [success] Total time: 1 s, completed Mar 28, 2022 5:59:25 AM
+2022.03.28 05:59:25 INFO  time: ran 'sbt bloopInstall' in 15s
+2022.03.28 05:59:25 INFO  Attempting to connect to the build server...
+2022.03.28 05:59:25 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\Aliyu Alege\Desktop\scala_samples\scalasample\.metals\bsp.trace.json or C:\Users\Aliyu Alege\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2022.03.28 05:59:25 INFO  Attempting to connect to the build server...
+2022.03.28 05:59:25 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\Aliyu Alege\Desktop\scala_samples\scalasample\project\.metals\bsp.trace.json or C:\Users\Aliyu Alege\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2022.03.28 05:59:25 INFO  time: Connected to build server in 0.29s
+2022.03.28 05:59:25 INFO  Connected to Build server: Bloop v1.4.13
+2022.03.28 05:59:27 ERROR issues while parsing: C:\Users\Aliyu Alege\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala3-library_3\3.1.1\scala3-library_3-3.1.1-sources.jar
+java.nio.file.InvalidPathException: Illegal char <:> at index 3: jar:file:///C:/Users/Aliyu%2520Alege/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/org/scala-lang/scala3-library_3/3.1.1/scala3-library_3-3.1.1-sources.jar!/scala/Tuple.scala
+	at sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at sun.nio.fs.WindowsPath.parse(WindowsPath.java:94)
+	at sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:255)
+	at java.nio.file.Paths.get(Paths.java:84)
+	at scala.meta.internal.mtags.CommonMtagsEnrichments$XtensionInputVirtual.$anonfun$filename$2(CommonMtagsEnrichments.scala:329)
+	at scala.util.Failure.getOrElse(Try.scala:222)
+	at scala.meta.internal.mtags.CommonMtagsEnrichments$XtensionInputVirtual.filename(CommonMtagsEnrichments.scala:329)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.loop(ScalaToplevelMtags.scala:126)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.indexRoot(ScalaToplevelMtags.scala:50)
+	at scala.meta.internal.mtags.MtagsIndexer.index(MtagsIndexer.scala:19)
+	at scala.meta.internal.mtags.MtagsIndexer.index$(MtagsIndexer.scala:18)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.index(ScalaToplevelMtags.scala:40)
+	at scala.meta.internal.mtags.Mtags.toplevels(Mtags.scala:32)
+	at scala.meta.internal.mtags.SymbolIndexBucket.indexSource(SymbolIndexBucket.scala:110)
+	at scala.meta.internal.mtags.SymbolIndexBucket.addSourceFile(SymbolIndexBucket.scala:95)
+	at scala.meta.internal.mtags.SymbolIndexBucket.$anonfun$addSourceJar$2(SymbolIndexBucket.scala:65)
+	at scala.collection.immutable.List.flatMap(List.scala:366)
+	at scala.meta.internal.mtags.SymbolIndexBucket.$anonfun$addSourceJar$1(SymbolIndexBucket.scala:63)
+	at scala.meta.internal.io.PlatformFileIO$.withJarFileSystem(PlatformFileIO.scala:87)
+	at scala.meta.internal.io.FileIO$.withJarFileSystem(FileIO.scala:44)
+	at scala.meta.internal.mtags.SymbolIndexBucket.addSourceJar(SymbolIndexBucket.scala:61)
+	at scala.meta.internal.mtags.OnDemandSymbolIndex.$anonfun$addSourceJar$2(OnDemandSymbolIndex.scala:81)
+	at scala.meta.internal.mtags.OnDemandSymbolIndex.tryRun(OnDemandSymbolIndex.scala:123)
+	at scala.meta.internal.mtags.OnDemandSymbolIndex.addSourceJar(OnDemandSymbolIndex.scala:80)
+	at scala.meta.internal.metals.MetalsLanguageServer.addSourceJarSymbols(MetalsLanguageServer.scala:2627)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$indexDependencySources$8(MetalsLanguageServer.scala:2582)
+	at scala.collection.TraversableLike$WithFilter.$anonfun$foreach$1(TraversableLike.scala:985)
+	at scala.collection.immutable.List.foreach(List.scala:431)
+	at scala.collection.TraversableLike$WithFilter.foreach(TraversableLike.scala:984)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$indexDependencySources$4(MetalsLanguageServer.scala:2573)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$indexDependencySources$4$adapted(MetalsLanguageServer.scala:2569)
+	at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+	at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+	at scala.meta.internal.metals.MetalsLanguageServer.indexDependencySources(MetalsLanguageServer.scala:2569)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$indexWorkspace$10(MetalsLanguageServer.scala:2511)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLanguageServer.indexWorkspace(MetalsLanguageServer.scala:2511)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$profiledIndexWorkspace$2(MetalsLanguageServer.scala:2403)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$profiledIndexWorkspace$1(MetalsLanguageServer.scala:2403)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:659)
+	at scala.util.Success.$anonfun$map$1(Try.scala:255)
+	at scala.util.Success.map(Try.scala:213)
+	at scala.concurrent.Future.$anonfun$map$1(Future.scala:292)
+	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:33)
+	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:33)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+
+2022.03.28 05:59:29 INFO  time: indexed workspace in 3.72s
+2022.03.28 05:59:29 INFO  compiling root (2 scala sources)
+2022.03.28 05:59:30 INFO  compiling root-test (1 scala source)
+2022.03.28 05:59:30 INFO  time: compiled root in 1.08s
+2022.03.28 05:59:30 INFO  time: compiled root-test in 0.83s
+Mar 28, 2022 5:59:42 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.reflect.InvocationTargetException
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.lang.IllegalArgumentException: Illegal character in path at index 22: file:///c:/Users/Aliyu Alege/Desktop/scala_samples/scalasample/src/main/scala/HelloWorld.scala
+	at java.net.URI.create(URI.java:852)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionString.toAbsolutePath(MetalsEnrichments.scala:630)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionString.toAbsolutePath(MetalsEnrichments.scala:621)
+	at scala.meta.internal.metals.debug.DebugProvider.debugDiscovery(DebugProvider.scala:359)
+	at scala.meta.internal.metals.MetalsLanguageServer.executeCommand(MetalsLanguageServer.scala:1828)
+	... 16 more
+Caused by: java.net.URISyntaxException: Illegal character in path at index 22: file:///c:/Users/Aliyu Alege/Desktop/scala_samples/scalasample/src/main/scala/HelloWorld.scala
+	at java.net.URI$Parser.fail(URI.java:2845)
+	at java.net.URI$Parser.checkChars(URI.java:3018)
+	at java.net.URI$Parser.parseHierarchical(URI.java:3102)
+	at java.net.URI$Parser.parse(URI.java:3050)
+	at java.net.URI.<init>(URI.java:588)
+	at java.net.URI.create(URI.java:850)
+	... 20 more
+
+Mar 28, 2022 5:59:51 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.reflect.InvocationTargetException
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.lang.IllegalArgumentException: Illegal character in path at index 22: file:///c:/Users/Aliyu Alege/Desktop/scala_samples/scalasample/src/main/scala/HelloWorld.scala
+	at java.net.URI.create(URI.java:852)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionString.toAbsolutePath(MetalsEnrichments.scala:630)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionString.toAbsolutePath(MetalsEnrichments.scala:621)
+	at scala.meta.internal.metals.debug.DebugProvider.debugDiscovery(DebugProvider.scala:359)
+	at scala.meta.internal.metals.MetalsLanguageServer.executeCommand(MetalsLanguageServer.scala:1828)
+	... 16 more
+Caused by: java.net.URISyntaxException: Illegal character in path at index 22: file:///c:/Users/Aliyu Alege/Desktop/scala_samples/scalasample/src/main/scala/HelloWorld.scala
+	at java.net.URI$Parser.fail(URI.java:2845)
+	at java.net.URI$Parser.checkChars(URI.java:3018)
+	at java.net.URI$Parser.parseHierarchical(URI.java:3102)
+	at java.net.URI$Parser.parse(URI.java:3050)
+	at java.net.URI.<init>(URI.java:588)
+	at java.net.URI.create(URI.java:850)
+	... 20 more
+
+2022.03.28 05:59:53 INFO  running 'C:\Program Files\Java\jdk1.8.0_321\bin\java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar C:\Users\ALIYUA~1\AppData\Local\Temp\metals5203458816590063452\sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall'
+2022.03.28 05:59:55 INFO  [info] welcome to sbt 1.6.2 (Oracle Corporation Java 1.8.0_321)
+2022.03.28 05:59:56 INFO  [info] loading settings for project scalasample-build-build from metals.sbt ...
+2022.03.28 05:59:56 INFO  [info] loading project definition from C:\Users\Aliyu Alege\Desktop\scala_samples\scalasample\project\project
+2022.03.28 05:59:58 INFO  [info] loading settings for project scalasample-build from metals.sbt ...
+2022.03.28 05:59:58 INFO  [info] loading project definition from C:\Users\Aliyu Alege\Desktop\scala_samples\scalasample\project
+2022.03.28 06:00:02 INFO  [success] Generated .bloop\scalasample-build.json
+2022.03.28 06:00:02 INFO  [success] Total time: 4 s, completed Mar 28, 2022 6:00:02 AM
+2022.03.28 06:00:02 INFO  [info] loading settings for project root from build.sbt ...
+2022.03.28 06:00:02 INFO  [info] set current project to scalasample (in build file:/C:/Users/Aliyu%20Alege/Desktop/scala_samples/scalasample/)
+2022.03.28 06:00:02 INFO  [success] Generated .bloop\root-test.json
+2022.03.28 06:00:02 INFO  [success] Generated .bloop\root.json
+2022.03.28 06:00:02 INFO  [success] Total time: 0 s, completed Mar 28, 2022 6:00:03 AM
+2022.03.28 06:00:03 INFO  time: ran 'sbt bloopInstall' in 9.4s
+2022.03.28 06:00:03 INFO  Disconnecting from Bloop session...
+2022.03.28 06:00:03 INFO  Shut down connection with build server.
+2022.03.28 06:00:03 INFO  Shut down connection with build server.
+2022.03.28 06:00:03 INFO  Attempting to connect to the build server...
+2022.03.28 06:00:03 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\Aliyu Alege\Desktop\scala_samples\scalasample\.metals\bsp.trace.json or C:\Users\Aliyu Alege\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2022.03.28 06:00:03 INFO  Attempting to connect to the build server...
+2022.03.28 06:00:03 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\Aliyu Alege\Desktop\scala_samples\scalasample\project\.metals\bsp.trace.json or C:\Users\Aliyu Alege\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2022.03.28 06:00:03 INFO  time: Connected to build server in 0.12s
+2022.03.28 06:00:03 INFO  Connected to Build server: Bloop v1.4.13
+2022.03.28 06:00:04 INFO  time: indexed workspace in 0.82s
+Mar 28, 2022 6:00:18 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.reflect.InvocationTargetException
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.lang.IllegalArgumentException: Illegal character in path at index 22: file:///c:/Users/Aliyu Alege/Desktop/scala_samples/scalasample/src/main/scala/HelloWorld.scala
+	at java.net.URI.create(URI.java:852)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionString.toAbsolutePath(MetalsEnrichments.scala:630)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionString.toAbsolutePath(MetalsEnrichments.scala:621)
+	at scala.meta.internal.metals.debug.DebugProvider.debugDiscovery(DebugProvider.scala:359)
+	at scala.meta.internal.metals.MetalsLanguageServer.executeCommand(MetalsLanguageServer.scala:1828)
+	... 16 more
+Caused by: java.net.URISyntaxException: Illegal character in path at index 22: file:///c:/Users/Aliyu Alege/Desktop/scala_samples/scalasample/src/main/scala/HelloWorld.scala
+	at java.net.URI$Parser.fail(URI.java:2845)
+	at java.net.URI$Parser.checkChars(URI.java:3018)
+	at java.net.URI$Parser.parseHierarchical(URI.java:3102)
+	at java.net.URI$Parser.parse(URI.java:3050)
+	at java.net.URI.<init>(URI.java:588)
+	at java.net.URI.create(URI.java:850)
+	... 20 more
+
+Mar 28, 2022 6:00:21 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.reflect.InvocationTargetException
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.lang.IllegalArgumentException: Illegal character in path at index 22: file:///c:/Users/Aliyu Alege/Desktop/scala_samples/scalasample/src/main/scala/HelloWorld.scala
+	at java.net.URI.create(URI.java:852)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionString.toAbsolutePath(MetalsEnrichments.scala:630)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionString.toAbsolutePath(MetalsEnrichments.scala:621)
+	at scala.meta.internal.metals.debug.DebugProvider.debugDiscovery(DebugProvider.scala:359)
+	at scala.meta.internal.metals.MetalsLanguageServer.executeCommand(MetalsLanguageServer.scala:1828)
+	... 16 more
+Caused by: java.net.URISyntaxException: Illegal character in path at index 22: file:///c:/Users/Aliyu Alege/Desktop/scala_samples/scalasample/src/main/scala/HelloWorld.scala
+	at java.net.URI$Parser.fail(URI.java:2845)
+	at java.net.URI$Parser.checkChars(URI.java:3018)
+	at java.net.URI$Parser.parseHierarchical(URI.java:3102)
+	at java.net.URI$Parser.parse(URI.java:3050)
+	at java.net.URI.<init>(URI.java:588)
+	at java.net.URI.create(URI.java:850)
+	... 20 more
+
+2022.03.28 06:00:35 INFO  time: code lens generation in 1.52s
+2022.03.28 06:02:51 INFO  shutting down Metals
+2022.03.28 06:02:51 INFO  Shut down connection with build server.
+2022.03.28 06:02:51 INFO  Shut down connection with build server.
+2022.03.28 06:02:51 ERROR Unexpected error initializing server
+org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Request window/showMessageRequest failed with message: Canceled
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:209)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:193)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+
